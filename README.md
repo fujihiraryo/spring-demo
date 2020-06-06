@@ -5,7 +5,7 @@
 データベースに接続した状態で起動するには最低限以下の3つが必要
 
 - ローカルでmysqlを起動
-
+- demodbというスキーマが作成されている状態
 - build.gradleのdependenciesに以下を記載
 
 ```gradle
