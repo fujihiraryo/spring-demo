@@ -51,7 +51,6 @@ CREATE TABLE `demo_table`
 
 ```java
 @Entity
-@Table(name = "demo_table")
 public class DemoEntity {
     @Id
     private Integer id;
@@ -97,7 +96,7 @@ GETメソッドで全件取得し、ページ上に表示
 - ControllerでModelに全件取得したEntityのリストをセットする
 
 ```java
-List<DemoEntity> demoEntities = demoRepository.findAll();
+List<DemoEntity> demoEntities = demoService.getAll();
 model.addAttribute("demoEntities", demoEntities);
 ```
 
@@ -115,8 +114,8 @@ Saveボタンを表示し、フォームに入力された情報を保存する
 
 ```java
 @GetMapping
-public String findAll(Model model) {
-    List<DemoEntity> demoEntities = demoRepository.findAll();
+public String get(Model model) {
+    List<DemoEntity> demoEntities = demoService.getAll();
     model.addAttribute("demoEntities", demoEntities);
     model.addAttribute("newEntity", new DemoEntity());
     return "demo.html";
@@ -138,7 +137,7 @@ public String findAll(Model model) {
 ```java
 @PostMapping
 public String save(DemoEntity demoEntity, Model model) {
-    demoRepository.save(demoEntity);
-    return findAll(model);
+    demoService.set(demoEntity);
+    return get(model);
 }
 ```
