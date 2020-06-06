@@ -86,3 +86,10 @@ GETメソッドで全件取得し、ページ上に表示
 
 - ControllerでModelに全件取得したEntityのリストをセットする
 - html上でth:eachを使い、1件ずつ表示する
+
+Saveボタンを表示し、フォームに入力された情報を保存する
+
+- ControllerでGetされたときにModelにフォームをセットする
+- html上に入力欄を表示し、入力されたデータをフォームにセットする
+- PostされたらControllerでフォームを受け取り、Repositoryによりsaveする
+- 再びGetされたときのhtmlを返す

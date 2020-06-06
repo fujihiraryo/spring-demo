@@ -3,13 +3,17 @@
 
 <head>
     <meta charset='utf-8'>
-    <title>Page Title</title>
+    <title>Demo Page</title>
 </head>
 
 <body>
     <th:block th:each="entity: ${demoEntities}">
         [[${entity.id}]] [[${entity.name}]] <br>
     </th:block>
+    <form method="post" th:object="${newEntity}">
+        <input type="text" th:field="*{name}" />
+        <input type="submit" value="Save" />
+    </form>
 </body>
 
 </html>
