@@ -1,0 +1,5 @@
+CREATE TABLE `demo_table`
+(
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR (100) DEFAULT NULL
+)

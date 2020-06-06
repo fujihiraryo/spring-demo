@@ -4,24 +4,48 @@
 
 データベースに接続した状態で起動するには最低限以下の3つが必要
 
-- ローカルでmysqlを起動している
+- ローカルでmysqlを起動
 
 - build.gradleのdependenciesに以下を記載
 
-```text
+```gradle
 implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 runtimeOnly 'mysql:mysql-connector-java'
 ```
 
 - application.propertiesに接続情報を記載
 
-```text
+```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/demodb
 spring.datasource.username=root
 spring.datasource.password=
 spring.datasource.driverClassName=com.mysql.jdbc.Driver
 spring.jpa.database=MYSQL
 spring.jpa.hibernate.ddl-auto=update
+```
+
+起動時にテーブルを自動で作成するには以下の2つが必要
+
+- schema.sqlにCREAETE文を記載
+
+```sql
+CREATE TABLE `demo_table`
+(
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR (100) DEFAULT NULL
+)
+```
+
+- テーブルに対応するEntityを作成
+
+```java
+@Entity
+@Table(name = "demo_table")
+public class DemoEntity {
+    @Id
+    private Integer id;
+    private String name;
+}
 ```
 
 ## Thymeleafによるレンダリング
