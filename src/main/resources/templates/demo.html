@@ -7,7 +7,9 @@
 </head>
 
 <body>
-    <h1>Hello</h1>
+    <th:block th:each="entity: ${demoEntities}">
+        [[${entity.id}]] [[${entity.name}]] <br>
+    </th:block>
 </body>
 
 </html>

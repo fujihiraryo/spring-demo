@@ -81,3 +81,8 @@ curl -X POST -H 'Content-Type:application/json' -d '{"name":"xxx"}' localhost:80
 
 - htmlファイルをresources/templates以下に置く
 - Controllerでhtmlの名前を返す
+
+GETメソッドで全件取得し、ページ上に表示
+
+- ControllerでModelに全件取得したEntityのリストをセットする
+- html上でth:eachを使い、1件ずつ表示する
