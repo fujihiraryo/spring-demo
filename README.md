@@ -104,7 +104,13 @@ Saveボタンを表示し、フォームに入力された情報を保存する
 - ControllerでGetされたときにModelにフォームをセットする
 
 ```java
-model.addAttribute("newEntity", new DemoEntity());
+@GetMapping
+public String findAll(Model model) {
+    List<DemoEntity> demoEntities = demoRepository.findAll();
+    model.addAttribute("demoEntities", demoEntities);
+    model.addAttribute("newEntity", new DemoEntity());
+    return "demo.html";
+}
 ```
 
 - html上に入力欄を表示し、入力されたデータをフォームにセットする
