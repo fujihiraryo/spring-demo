@@ -23,6 +23,7 @@ runtimeOnly 'mysql:mysql-connector-java'
 ```
 
 - application.propertiesに接続情報を記載
+- `spring.jpa.hibernate.ddl-auto=always` だとidがauto_incrementにならなかった
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/demodb
@@ -66,7 +67,7 @@ GETメソッドでテーブルのレコード全件取得
 demoRepository.findAll()
 ```
 
-- EntityのidフィールドにGeneratedValueをつけないとidが自動で生成されない
+- EntityのidフィールドにGeneratedValueをつけないとidが自動採番されない
 
 ```bash
 curl -X GET -H 'Content-Type:application/json' localhost:8080/demo/api
