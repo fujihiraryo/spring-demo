@@ -85,11 +85,44 @@ curl -X POST -H 'Content-Type:application/json' -d '{"name":"xxx"}' localhost:80
 GETメソッドで全件取得し、ページ上に表示
 
 - ControllerでModelに全件取得したEntityのリストをセットする
+
+```java
+List<DemoEntity> demoEntities = demoRepository.findAll();
+model.addAttribute("demoEntities", demoEntities);
+```
+
 - html上でth:eachを使い、1件ずつ表示する
+
+```html
+<th:block th:each="entity: ${demoEntities}">
+    [[${entity.id}]] [[${entity.name}]] <br>
+</th:block>
+```
 
 Saveボタンを表示し、フォームに入力された情報を保存する
 
 - ControllerでGetされたときにModelにフォームをセットする
+
+```java
+model.addAttribute("newEntity", new DemoEntity());
+```
+
 - html上に入力欄を表示し、入力されたデータをフォームにセットする
+
+```html
+<form method="post" th:object="${newEntity}">
+    <input type="text" th:field="*{name}" />
+    <input type="submit" value="Save" />
+</form>
+```
+
 - PostされたらControllerでフォームを受け取り、Repositoryによりsaveする
 - 再びGetされたときのhtmlを返す
+
+```java
+@PostMapping
+public String save(DemoEntity demoEntity, Model model) {
+    demoRepository.save(demoEntity);
+    return findAll(model);
+}
+```
