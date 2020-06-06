@@ -5,6 +5,9 @@
 - RESTful APIの場合とWebページの場合それぞれで全件取得と登録
 - エラーハンドリング、バリデーションチェックはやってない
 
+## 構成
+![Screen Shot 2020-06-06 at 20 10 55](https://user-images.githubusercontent.com/49140016/83942882-9d5a6680-a832-11ea-965a-f8894cfd862d.png)
+
 ## Spring JPAを使ったデータベースアクセス
 
 データベースに接続した状態で起動するには最低限以下の3つが必要
