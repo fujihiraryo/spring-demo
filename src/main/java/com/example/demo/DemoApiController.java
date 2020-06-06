@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("demo")
-public class DemoController {
+@RequestMapping("demo/api")
+public class DemoApiController {
     @Autowired
     private DemoRepository demoRepository;
 
