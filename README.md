@@ -60,7 +60,7 @@ demoRepository.findAll()
 - EntityのidフィールドにGeneratedValueをつけないとidが自動で生成されない
 
 ```bash
-curl -X GET -H 'Content-Type:application/json' localhost:8080/demo
+curl -X GET -H 'Content-Type:application/json' localhost:8080/demo/api
 ```
 
 POSTメソッドでテーブルにレコード追加
@@ -72,7 +72,7 @@ demoRepository.save(demoEntity)
 ```
 
 ```bash
-curl -X POST -H 'Content-Type:application/json' -d '{"name":"xxx"}' localhost:8080/demo
+curl -X POST -H 'Content-Type:application/json' -d '{"name":"xxx"}' localhost:8080/demo/api
 ```
 
 ## Thymeleafによるレンダリング
