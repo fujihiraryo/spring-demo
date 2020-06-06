@@ -1,5 +1,6 @@
+DROP TABLE `demo_table`
 CREATE TABLE `demo_table`
 (
-    `id` INT NOT NULL AUTO_INCREMENT,
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR (100) DEFAULT NULL
 )

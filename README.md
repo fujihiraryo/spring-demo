@@ -21,7 +21,7 @@ spring.datasource.username=root
 spring.datasource.password=
 spring.datasource.driverClassName=com.mysql.jdbc.Driver
 spring.jpa.database=MYSQL
-spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.ddl-auto=none
 ```
 
 起動時にテーブルを自動で作成するには以下の2つが必要
@@ -29,9 +29,10 @@ spring.jpa.hibernate.ddl-auto=update
 - schema.sqlにCREAETE文を記載
 
 ```sql
+DROP TABLE `demo_table`
 CREATE TABLE `demo_table`
 (
-    `id` INT NOT NULL AUTO_INCREMENT,
+    `id` INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR (100) DEFAULT NULL
 )
 ```
