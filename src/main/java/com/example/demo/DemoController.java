@@ -15,15 +15,15 @@ public class DemoController {
     private final DemoRepository demoRepository;
 
     @GetMapping
-    public String findAll(Model model) {
+    public String get(Model model) {
         model.addAttribute("demoEntities", demoRepository.findAll());
         model.addAttribute("newEntity", new DemoEntity());
         return "demo.html";
     }
 
     @PostMapping
-    public String save(DemoEntity demoEntity, Model model) {
+    public String post(DemoEntity demoEntity, Model model) {
         demoRepository.save(demoEntity);
-        return findAll(model);
+        return get(model);
     }
 }
