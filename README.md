@@ -49,4 +49,30 @@ public class DemoEntity {
 }
 ```
 
+GETメソッドでテーブルのレコード全件取得
+
+- Controllerにメソッドを追加
+
+```java
+demoRepository.findAll()
+```
+
+- EntityのidフィールドにGeneratedValueをつけないとidが自動で生成されない
+
+```bash
+curl -X GET -H 'Content-Type:application/json' localhost:8080/demo
+```
+
+POSTメソッドでテーブルにレコード追加
+
+- Controllerにメソッド追加
+
+```java
+demoRepository.save(demoEntity)
+```
+
+```bash
+curl -X POST -H 'Content-Type:application/json' -d '{"name":"xxx"}' localhost:8080/demo
+```
+
 ## Thymeleafによるレンダリング
