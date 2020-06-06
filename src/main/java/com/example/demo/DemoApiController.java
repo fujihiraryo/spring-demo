@@ -15,15 +15,15 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DemoApiController {
 
-    private DemoRepository demoRepository;
+    private DemoService demoService;
 
     @GetMapping
-    public List<DemoEntity> findAll() {
-        return demoRepository.findAll();
+    public List<DemoEntity> get() {
+        return demoService.getAll();
     }
 
     @PostMapping
     public void save(@RequestBody DemoEntity demoEntity) {
-        demoRepository.save(demoEntity);
+        demoService.set(demoEntity);
     }
 }
