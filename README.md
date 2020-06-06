@@ -76,3 +76,8 @@ curl -X POST -H 'Content-Type:application/json' -d '{"name":"xxx"}' localhost:80
 ```
 
 ## Thymeleafによるレンダリング
+
+リクエストに対してhtmlのページを返す
+
+- htmlファイルをresources/templates以下に置く
+- Controllerでhtmlの名前を返す
