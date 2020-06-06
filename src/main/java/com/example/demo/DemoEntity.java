@@ -18,6 +18,9 @@ public class DemoEntity {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "exist")
+    private Boolean exist;
+
     public Integer getId() {
         return id;
     }
@@ -26,11 +29,19 @@ public class DemoEntity {
         return name;
     }
 
+    public Boolean getExist() {
+        return exist;
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setExist(Boolean exist) {
+        this.exist = exist;
     }
 }
