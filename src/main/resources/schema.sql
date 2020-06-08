@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS demo_table;
-CREATE TABLE IF NOT EXISTS demo_table
+drop table if exists demo;
+create table if not exists demo
 (
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    name VARCHAR (100) DEFAULT NULL,
-    exist BOOLEAN NOT NULL DEFAULT FALSE
+    id int primary key auto_increment not null,
+    name varchar (100) default null,
+    exist boolean not null default false
 );
