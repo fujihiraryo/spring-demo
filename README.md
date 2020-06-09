@@ -11,7 +11,7 @@
 
 - ローカルでmysqlを起動
 - demodbというスキーマが作成されている状態
-- build.gradleのdependenciesに以下を記載
+- build.gradleのdependenciesに依存関係を記載
 - application.propertiesに接続情報を記載
 
 起動時にテーブルを自動で作成するには以下の2つが必要
